@@ -1,0 +1,37 @@
+{
+  "cb_url": "",
+  "cb_api": "",
+  "year": 2018,
+  "month": 10,
+  "day": 1,
+  "queries": {
+    "powershell": {
+      "query": "process_name:powershell.exe"
+    },
+    "powershell_netconn": {
+      "query": "process_name:powershell.exe AND netconn_count:[1 TO *]",
+      "attribute": "netconn"
+    },
+    "powershell_modloads": {
+      "query": "process_name:powershell.exe AND modload_count:[1 TO *]",
+      "attribute": "modload"
+    },
+    "powershell_childproc": {
+      "query": "process_name:powershell.exe AND childproc_count:[1 TO *]",
+      "attribute": "childproc"
+    },
+    "powershell_crossproc": {
+      "query": "process_name:powershell.exe AND (crossproc_type:\"processopen\" OR crossproc_type:\"remotethread\")",
+      "attribute": "crossproc"
+    },
+    "powershell_filemod": {
+      "query": "process_name:powershell.exe AND filemod_count:[1 TO *]",
+      "attribute": "filemod"
+    },
+    "powershell_regmod": {
+      "query": "process_name:powershell.exe AND regmod_count:[1 TO *]",
+      "attribute": "regmod"
+    }
+  }
+}
+
